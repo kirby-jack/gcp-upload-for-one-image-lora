@@ -41,10 +41,10 @@ python3 /home/jackkirby/kohya_ss/sd-scripts/sdxl_train_network.py --config_file=
 
 ## Usage
 1. `git clone` the repository
-2. run `./setup.sh`
+2. run `./setup.sh` (you only need to do this once, or whenever you want to change your project, instance, or default settings)
 3. run `./upload.sh`
 
-To change additional lora settings, updated `base_config.toml`. Please **do not** change variables that begin with `$`.
+To change additional lora settings, updated `base_config.toml` then re-run `./upload.sh`. Please **do not** change variables that begin with `$`.
 
 ## Contact
 If you have any questions or would like additional features in this script, please feel free to contact me on LinkeIn https://www.linkedin.com/in/kirby-jack/
