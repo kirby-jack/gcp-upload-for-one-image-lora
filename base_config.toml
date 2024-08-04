@@ -1,0 +1,78 @@
+[sdxl_arguments]
+cache_text_encoder_outputs = false
+no_half_vae = true
+min_timestep = 0
+max_timestep = 1000
+shuffle_caption = false
+full_fp16 = true
+
+[model_arguments]
+pretrained_model_name_or_path = "$pretrained_model_name_or_path"
+[dataset_arguments]
+keep_tokens = 1 # was 0
+resolution = "$resolution"
+color_aug = false
+token_warmup_min = 1
+token_warmup_step = 0
+
+[training_arguments]
+output_dir = "$output_dir"
+output_name = "$output_name"
+save_precision = "fp16"
+#save_every_n_epochs = 6
+train_batch_size = 1
+max_token_length = 75
+mem_eff_attn = false
+sdpa = true
+xformers = false
+max_train_epochs = 7 # was 6
+max_data_loader_n_workers = 4
+persistent_data_loader_workers = false
+gradient_checkpointing = true
+gradient_accumulation_steps = 3
+mixed_precision = "fp16"
+cache_latents_to_disk = true
+
+[sample_prompt_arguments]
+sample_every_n_epochs = 1
+sample_sampler = "euler_a" 
+sample_at_first = true
+sample_prompts = "" 
+
+[saving_arguments]
+save_model_as = "safetensors"
+
+[optimizer_arguments]
+optimizer_type = "AdamW8bit" 
+learning_rate = 0.0001
+max_grad_norm = 0
+# optimizer_args = [ "scale_parameter=False", "relative_step=False", "warmup_init=False",]
+lr_scheduler = "constant" 
+lr_warmup_steps = 0
+lr_scheduler_num_cycles = 0
+
+[additional_network_arguments]
+no_metadata = false
+network_module = "networks.lora"
+network_dim = 128 
+network_alpha = 128 
+network_args = []
+network_train_unet_only = true
+
+[advanced_training_config]
+clip_skip = 3
+flip_aug = false
+save_state = false
+save_last_n_epochs_state = true
+resume = ""
+noise_offset = 0.0357
+adaptive_noise_scale = 0.00357
+caption_dropout_rate = 0.1
+caption_tag_dropout_rate = 0.2
+caption_dropout_every_n_epochs = 0
+min_snr_gamma = 5
+debiased_estimation_loss = true
+
+[advanced]
+class_prompt = "$class"
+instance_prompt = "$instance_prompt"

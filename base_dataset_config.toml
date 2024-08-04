@@ -1,0 +1,12 @@
+[general]
+enable_bucket = true    # Whether to use Aspect Ratio Bucketing
+
+[[datasets]]
+resolution = [$resolution]       # Training resolution
+batch_size = 1          # Batch size
+
+  [[datasets.subsets]]
+  image_dir = "$gcpParentLoraFolders/$pathToLoraFolder"    # Specify the folder containing the training images
+  caption_extension = '.txt'            # Caption file extension; change this if using .txt
+  num_repeats = $repeats
+  
