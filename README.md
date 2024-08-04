@@ -15,7 +15,8 @@ Let's say you have an image named `test test.png` with a resolution of `512x768`
 
 After you run the script:
 
-1. The following folders will be uploaded to your GCP VM (**note**: the folder path is set with the `setup.sh` script)
+1. Your image will be renamed by replacing whitespaces with underscores and appending the name with the images resolution. For example, `test test.png` will become `test_test_512x768.png` (this behaviour can be turned off with the `setup.sh` script). 
+2. The following folders will be uploaded to your GCP VM (**note**: the folder path is set with the `setup.sh` script)
 
 ```
 folder path: '~/kohya_ss/dataset/images/'
