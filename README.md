@@ -42,8 +42,10 @@ python3 /home/jackkirby/kohya_ss/sd-scripts/sdxl_train_network.py --config_file=
 
 ## Usage
 1. `git clone` the repository
-2. run `./setup.sh` (you only need to do this once, or whenever you want to change your project, instance, or default settings)
-3. run `./upload.sh`
+2. `cd` into directory
+3. allow execute permission with `chmod u+x setup.sh` and `chmod u+x upload.sh`
+4. run `./setup.sh` (you only need to do this once, or whenever you want to change your project, instance, or default settings)
+5. run `./upload.sh`
 
 To change additional lora settings, update `base_config.toml` then re-run `./upload.sh`. Please **do not** change variables that begin with `$`.
 
